@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Aurora 工作板</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f3f4fb;--surface:#ffffff;--ink:#262a36;--ink2:#6a7082;--line:#e6e8f2;
+  --brand:#858BF5;--brand-ink:#383E4B;--soft:#eef0ff;
+  --s-todo:#9aa3b8;--s-shoot:#858BF5;--s-edit:#5fb4f0;--s-post:#f0a33c;--s-done:#4cc795;
+  --hot:#f6c445;--shadow:0 1px 2px rgba(40,44,70,.05),0 6px 18px rgba(40,44,70,.06);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){
+  --bg:#13151b;--surface:#1c1f28;--ink:#eceef5;--ink2:#9ca3b5;--line:#2a2e3a;--soft:#232640;--brand-ink:#d9dbff;--shadow:none}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 "Noto Sans TC",-apple-system,"PingFang HK",sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+header{padding:22px 0 8px}
+.brand{font:700 13px/1 Montserrat,sans-serif;letter-spacing:.14em;color:var(--brand)}
+h1{margin:6px 0 2px;font-size:24px;color:var(--brand-ink)}
+.sub{color:var(--ink2);font-size:13px}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 4px}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 14px;font:inherit;font-size:14px;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--brand);border-color:var(--brand);color:#fff}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:14px 0}
+.stat{background:var(--surface);border-radius:14px;padding:12px 14px;box-shadow:var(--shadow);border-top:4px solid var(--c)}
+.stat b{display:block;font:700 26px/1.1 Montserrat,sans-serif}.stat span{font-size:13px;color:var(--ink2)}
+.board{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;align-items:start;margin-bottom:24px}
+.col{background:var(--soft);border-radius:16px;padding:10px}
+.col h3{display:flex;align-items:center;gap:8px;margin:2px 4px 10px;font-size:14px}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--c)}
+.count{margin-left:auto;font:600 12px Montserrat,sans-serif;color:var(--ink2)}
+.card{background:var(--surface);border-radius:12px;padding:10px 12px;margin-bottom:8px;box-shadow:var(--shadow);border-left:4px solid var(--c)}
+.card .meta{display:flex;gap:6px;align-items:center;flex-wrap:wrap;font-size:12px;color:var(--ink2)}
+.tag{background:var(--soft);border-radius:6px;padding:1px 7px;font-size:12px;color:var(--brand-ink)}
+.hot{background:var(--hot);color:#3a2c00}
+.card .t{font-weight:500;margin:4px 0 2px}
+.card .n{font-size:13px;color:var(--ink2)}
+.due{font-size:12px;margin-top:6px;color:var(--ink2)}.due b{color:var(--ink)}
+.empty{font-size:13px;color:var(--ink2);padding:6px 4px}
+section.panel{background:var(--surface);border-radius:16px;padding:16px;box-shadow:var(--shadow);margin:0 0 16px}
+section.panel h2{font-size:16px;margin:0 0 10px}
+.rows{display:grid;gap:6px}.row{display:grid;grid-template-columns:150px 1fr auto;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);font-size:14px}
+.row:last-child{border:0}.row .w{color:var(--ink2)}
+.codes{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px}
+code{font-family:ui-monospace,monospace;background:var(--soft);color:var(--brand-ink);border-radius:6px;padding:2px 7px;font-size:13px}
+.tabs{display:none}
+@media (max-width:820px){
+  .stats{grid-template-columns:repeat(3,1fr)}
+  .tabs{display:flex;gap:6px;overflow-x:auto;margin:6px 0 10px}
+  .board{grid-template-columns:1fr}.col{display:none}.col.on{display:block}
+  .row{grid-template-columns:1fr}.row .w{font-size:13px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="brand">AURORA</div><h1 id="title">工作板</h1><div class="sub" id="upd">載入中…</div></header>
+<div class="bar" id="filters"></div>
+<div class="stats" id="stats"></div>
+<div class="tabs" id="tabs"></div>
+<div class="board" id="board"></div>
+<div id="extra"></div>
+</div>
+<script>
+const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const STAGES=[['todo','待辦','--s-todo'],['shoot','拍片','--s-shoot'],['edit','剪片','--s-edit'],['post','出 Post','--s-post'],['done','完成','--s-done']];
+let D,filter='全部',stageTab='todo';
+function card(t,c){return `<div class="card" style="--c:var(${c})"><div class="meta">${t.priority==='高'?'<span class="tag hot">🟡 趕急</span>':''}<span>${esc(t.id)}</span>${D.mode==='boss'?`<span class="tag">${esc(t.teacher)}</span>`:''}</div>
+<div class="t">${esc(t.title)}</div><div class="n">${esc(t.next)}</div><div class="due">截止：<b>${esc(t.due||'未定')}</b></div></div>`}
+function render(){
+  const T=D.tasks.filter(t=>filter==='全部'||t.teacher===filter);
+  $('#title').textContent=D.mode==='boss'?'老闆總覽':`${D.teacher}・${D.subject}`;
+  if(D.mode==='boss'){const ts=['全部',...new Set(D.tasks.map(t=>t.teacher))];
+    $('#filters').innerHTML=ts.map(n=>`<button class="chip" aria-pressed="${n===filter}" data-n="${esc(n)}">${esc(n)}</button>`).join('');
+    $('#filters').querySelectorAll('button').forEach(b=>b.onclick=()=>{filter=b.dataset.n;render()});}
+  $('#stats').innerHTML=STAGES.map(([k,l,c])=>`<div class="stat" style="--c:var(${c})"><b>${T.filter(t=>t.stage===k).length}</b><span>${l}</span></div>`).join('');
+  $('#tabs').innerHTML=STAGES.map(([k,l])=>`<button class="chip" aria-pressed="${k===stageTab}" data-k="${k}">${l}</button>`).join('');
+  $('#tabs').querySelectorAll('button').forEach(b=>b.onclick=()=>{stageTab=b.dataset.k;render()});
+  $('#board').innerHTML=STAGES.map(([k,l,c])=>{const L=T.filter(t=>t.stage===k).sort((a,b)=>(b.priority==='高')-(a.priority==='高'));
+    return `<div class="col ${k===stageTab?'on':''}" style="--c:var(${c})"><h3><span class="dot"></span>${l}<span class="count">${L.length}</span></h3>${L.map(t=>card(t,c)).join('')||'<div class="empty">冇</div>'}</div>`}).join('');
+  const reply=`<section class="panel"><h2>做完喺群組覆（唔覆當未做）</h2><div class="codes">${D.replies.map(r=>`<div><code>${esc(r[0])}</code> <span class="sub">${esc(r[1])}</span></div>`).join('')}</div></section>`;
+  const rules=`<section class="panel"><h2>出 Post 規則</h2><div class="rows">${D.content.rules.map(r=>`<div class="row" style="grid-template-columns:1fr"><span>${esc(r)}</span></div>`).join('')}</div></section>`;
+  const remind=`<section class="panel"><h2>提醒時間（8 點出 Post）</h2><div class="rows">${D.content.reminders.map(r=>`<div class="row" style="grid-template-columns:150px 1fr"><b>${esc(r[0])}</b><span>${esc(r[1])}</span></div>`).join('')}</div></section>`;
+  const auto=D.automation?`<section class="panel"><h2>Automation Calendar</h2><div class="rows">${D.automation.map(a=>`<div class="row"><b>${esc(a.when)}</b><span>${esc(a.what)}</span><span class="w">${a.live?'✅ 行緊':'⏳ 計劃'}</span></div>`).join('')}</div></section>`:'';
+  const series=D.content.series?.length?`<section class="panel"><h2>Content Calendar・每週固定系列</h2><div class="rows">${D.content.series.map(s=>`<div class="row"><b>${esc(s.day)}</b><span>${esc(s.what)}</span><span class="w">${esc(s.who)}</span></div>`).join('')}</div></section>`:'';
+  $('#extra').innerHTML=reply+series+rules+remind+auto;
+}
+fetch('data.json?'+Date.now()).then(r=>r.json()).then(d=>{D=d;$('#upd').textContent='更新：'+d.updated;render()}).catch(()=>$('#upd').textContent='讀唔到資料');
+</script>
+</body>
+</html>

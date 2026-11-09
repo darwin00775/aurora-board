@@ -1,0 +1,394 @@
+{
+ "mode": "boss",
+ "updated": "10/11/2026 05:00:52",
+ "tasks": [
+  {
+   "id": "B001",
+   "teacher": "Aurora",
+   "subject": "品牌",
+   "title": "3 個 IG Pinned Post（2027 DSE 時間表、名師集結、課程介紹）",
+   "next": "確認最終設計，上架",
+   "kind": "出Post",
+   "priority": "高",
+   "due": null,
+   "status": "待老闆定日子",
+   "stage": "post"
+  },
+  {
+   "id": "B002",
+   "teacher": "Aurora",
+   "subject": "品牌",
+   "title": "Highlights 封面（ABOUT、FAQ）",
+   "next": "核實已上架邊幾個",
+   "kind": "設計",
+   "priority": "中",
+   "due": null,
+   "status": "待老闆定日子",
+   "stage": "todo"
+  },
+  {
+   "id": "B003",
+   "teacher": "Aurora",
+   "subject": "品牌",
+   "title": "整理品牌設計模板同最新檔案",
+   "next": "集中放一個 Drive 資料夾",
+   "kind": "整理",
+   "priority": "高",
+   "due": null,
+   "status": "待老闆定日子",
+   "stage": "todo"
+  },
+  {
+   "id": "B004",
+   "teacher": "Aurora",
+   "subject": "品牌",
+   "title": "主帳號文案同留言 info／DM 引流",
+   "next": "核實文案同關鍵字",
+   "kind": "文案",
+   "priority": "高",
+   "due": null,
+   "status": "待老闆定日子",
+   "stage": "todo"
+  },
+  {
+   "id": "E001",
+   "teacher": "Renee",
+   "subject": "英文",
+   "title": "內容日曆由 Notion 搬去一個地方",
+   "next": "以後統一喺呢個網站睇",
+   "kind": "整理",
+   "priority": "中",
+   "due": null,
+   "status": "待老闆定日子",
+   "stage": "todo"
+  },
+  {
+   "id": "E002",
+   "teacher": "Renee",
+   "subject": "英文",
+   "title": "講D唔港DSE／港乜都Duck／KONG ENGLISH／News in English 系列",
+   "next": "核對已出同未拍嘅片",
+   "kind": "拍片",
+   "priority": "高",
+   "due": null,
+   "status": "待老闆定日子",
+   "stage": "shoot"
+  },
+  {
+   "id": "E003",
+   "teacher": "Renee",
+   "subject": "英文",
+   "title": "《英文作文百搭框架》Giveaway",
+   "next": "確認教材最終版同自動回覆",
+   "kind": "Giveaway",
+   "priority": "中",
+   "due": null,
+   "status": "待老闆定日子",
+   "stage": "todo"
+  },
+  {
+   "id": "E004",
+   "teacher": "Renee",
+   "subject": "英文",
+   "title": "News in English Carousel 模板",
+   "next": "整理 Master Template",
+   "kind": "設計",
+   "priority": "中",
+   "due": null,
+   "status": "待老闆定日子",
+   "stage": "todo"
+  },
+  {
+   "id": "P001",
+   "teacher": "Martin",
+   "subject": "物理",
+   "title": "IG 新定位同內容方向",
+   "next": "同 Martin 確認採用邊個方向",
+   "kind": "傾",
+   "priority": "高",
+   "due": null,
+   "status": "待老闆定日子",
+   "stage": "todo"
+  },
+  {
+   "id": "P002",
+   "teacher": "Martin",
+   "subject": "物理",
+   "title": "冷知識／科技新聞／一分鐘解題／動畫 腳本",
+   "next": "核對已拍同要拍嘅新片",
+   "kind": "拍片",
+   "priority": "高",
+   "due": null,
+   "status": "待老闆定日子",
+   "stage": "shoot"
+  },
+  {
+   "id": "P003",
+   "teacher": "Martin",
+   "subject": "物理",
+   "title": "揾返「Martin Physics 內容管理表」",
+   "next": "確認放喺邊、仲用唔用",
+   "kind": "整理",
+   "priority": "高",
+   "due": null,
+   "status": "待老闆定日子",
+   "stage": "todo"
+  },
+  {
+   "id": "P004",
+   "teacher": "Martin",
+   "subject": "物理",
+   "title": "Formula Sheet 引流（留言 formula）",
+   "next": "核實資源同自動回覆",
+   "kind": "Giveaway",
+   "priority": "高",
+   "due": null,
+   "status": "待老闆定日子",
+   "stage": "todo"
+  },
+  {
+   "id": "C001",
+   "teacher": "鋒宜",
+   "subject": "中文",
+   "title": "IG Rebrand 提案",
+   "next": "老闆批唔批、做邊幾項",
+   "kind": "傾",
+   "priority": "高",
+   "due": null,
+   "status": "待老闆定日子",
+   "stage": "todo"
+  },
+  {
+   "id": "C002",
+   "teacher": "鋒宜",
+   "subject": "中文",
+   "title": "8 星期內容計劃（文言、範文、Threads 題材）",
+   "next": "核實已出同待做；Threads 素材唔好直接用截圖",
+   "kind": "拍片",
+   "priority": "中",
+   "due": null,
+   "status": "待老闆定日子",
+   "stage": "shoot"
+  },
+  {
+   "id": "C003",
+   "teacher": "鋒宜",
+   "subject": "中文",
+   "title": "文言／範文／評估 免費資源＋自動回覆",
+   "next": "確認資源就緒同自動回覆生效",
+   "kind": "Giveaway",
+   "priority": "高",
+   "due": null,
+   "status": "待老闆定日子",
+   "stage": "todo"
+  },
+  {
+   "id": "A001",
+   "teacher": "Aaron",
+   "subject": "西史",
+   "title": "60 秒課程宣傳片腳本",
+   "next": "Aaron 回覆修改，約拍攝",
+   "kind": "拍片",
+   "priority": "中",
+   "due": null,
+   "status": "待老闆定日子",
+   "stage": "shoot"
+  },
+  {
+   "id": "A002",
+   "teacher": "Aaron",
+   "subject": "西史",
+   "title": "西史題型／學生痛點內容",
+   "next": "定系列同 CTA 關鍵字",
+   "kind": "計劃",
+   "priority": "中",
+   "due": null,
+   "status": "待老闆定日子",
+   "stage": "todo"
+  },
+  {
+   "id": "X001",
+   "teacher": "各科",
+   "subject": "數學／經濟／化學／BAFS",
+   "title": "老師介紹圖",
+   "next": "確認老師資料同發佈版本",
+   "kind": "設計",
+   "priority": "中",
+   "due": null,
+   "status": "待老闆定日子",
+   "stage": "todo"
+  },
+  {
+   "id": "O001",
+   "teacher": "老闆",
+   "subject": "營運",
+   "title": "SaleSmartly 關鍵字逐個測試（info、DM、class、formula、作文、文言、範文、評估）",
+   "next": "逐個留言測試，記低邊個壞",
+   "kind": "自動化",
+   "priority": "高",
+   "due": null,
+   "status": "待老闆定日子",
+   "stage": "todo"
+  },
+  {
+   "id": "O002",
+   "teacher": "老闆",
+   "subject": "營運",
+   "title": "老師每週供稿 4–6 項（知識點／學生問題）",
+   "next": "老闆決定實唔實行、幾時交",
+   "kind": "制度",
+   "priority": "中",
+   "due": null,
+   "status": "待老闆定日子",
+   "stage": "todo"
+  },
+  {
+   "id": "O003",
+   "teacher": "老闆",
+   "subject": "營運",
+   "title": "每月集中拍攝日",
+   "next": "定負責人同日子",
+   "kind": "制度",
+   "priority": "中",
+   "due": null,
+   "status": "待老闆定日子",
+   "stage": "todo"
+  },
+  {
+   "id": "O004",
+   "teacher": "老闆",
+   "subject": "營運",
+   "title": "改晒曾經喺群組出現過嘅密碼（IG、CapCut、Aristo、電腦）",
+   "next": "改密碼，以後唔喺群組發",
+   "kind": "安全",
+   "priority": "高",
+   "due": null,
+   "status": "待老闆定日子",
+   "stage": "todo"
+  }
+ ],
+ "replies": [
+  [
+   "已上載 E012",
+   "原片放咗 Drive"
+  ],
+  [
+   "確認 E012",
+   "剪好嘅片 OK"
+  ],
+  [
+   "改 E012：…",
+   "要改邊度"
+  ],
+  [
+   "已出 E012 連結",
+   "已出 Post"
+  ],
+  [
+   "改期 E012 11/20",
+   "想改日子（要老闆批）"
+  ]
+ ],
+ "content": {
+  "rules": [
+   "晚上 8:00 出 Post；過咗 9:00 就改聽日出。",
+   "每個帳號一日最多 1 條。",
+   "星期五至日流量最好，重要片（宣傳、Giveaway）放呢幾日。",
+   "頭 5 秒要有 Hook。",
+   "影片放 Google Drive：01_老師原片 → 02_剪好待確認 → 03_待出 → 04_已出，唔用 WhatsApp 傳。"
+  ],
+  "reminders": [
+   [
+    "前 7 日",
+    "要拍咩（題目、稿）"
+   ],
+   [
+    "前 5 日",
+    "原片放 Drive"
+   ],
+   [
+    "前 3 日",
+    "剪好交老師睇"
+   ],
+   [
+    "前 2 日",
+    "老師確認"
+   ],
+   [
+    "前 1 晚 21:00",
+    "合併摘要：聽日出邊條"
+   ],
+   [
+    "當日 19:00",
+    "提醒 8 點出"
+   ],
+   [
+    "當日 21:00",
+    "未覆「已出」就通知老闆"
+   ],
+   [
+    "星期日 21:00",
+    "下星期總覽"
+   ]
+  ],
+  "series": [
+   {
+    "day": "星期一",
+    "who": "Renee",
+    "what": "港乜都 Duck（輕鬆）"
+   },
+   {
+    "day": "星期二、五",
+    "who": "Renee",
+    "what": "講D唔港DSE＋課程 CTA"
+   }
+  ]
+ },
+ "automation": [
+  {
+   "when": "每 30 分鐘",
+   "what": "讀 Aurora 後台訂單",
+   "live": true
+  },
+  {
+   "when": "每 30 分鐘",
+   "what": "報名跟進：收到訂單、24／48 小時提醒、成功報讀、試堂；通知老師同老闆",
+   "live": true
+  },
+  {
+   "when": "每 30 分鐘",
+   "what": "讀 7 個老師群組新訊息，轉發老闆",
+   "live": true
+  },
+  {
+   "when": "每晚 00:30",
+   "what": "Claude 檢討當日自動化，WhatsApp 摘要俾老闆",
+   "live": true
+  },
+  {
+   "when": "每 3 分鐘",
+   "what": "有未解決問題嘅群組＋老闆私訊：即時跟回覆",
+   "live": false
+  },
+  {
+   "when": "每晚 21:00",
+   "what": "各科群組：明日工作摘要",
+   "live": false
+  },
+  {
+   "when": "當日 19:00",
+   "what": "出 Post 前 1 小時提醒",
+   "live": false
+  },
+  {
+   "when": "星期日 21:00",
+   "what": "下星期工作總覽",
+   "live": false
+  },
+  {
+   "when": "收到憑證",
+   "what": "自動讀金額，啱就標記收款",
+   "live": false
+  }
+ ]
+}

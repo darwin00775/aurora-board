@@ -1,0 +1,133 @@
+{
+ "mode": "teacher",
+ "teacher": "Renee",
+ "subject": "英文",
+ "updated": "10/11/2026 05:00:52",
+ "tasks": [
+  {
+   "id": "E001",
+   "teacher": "Renee",
+   "subject": "英文",
+   "title": "內容日曆由 Notion 搬去一個地方",
+   "next": "以後統一喺呢個網站睇",
+   "kind": "整理",
+   "priority": "中",
+   "due": null,
+   "status": "待老闆定日子",
+   "stage": "todo"
+  },
+  {
+   "id": "E002",
+   "teacher": "Renee",
+   "subject": "英文",
+   "title": "講D唔港DSE／港乜都Duck／KONG ENGLISH／News in English 系列",
+   "next": "核對已出同未拍嘅片",
+   "kind": "拍片",
+   "priority": "高",
+   "due": null,
+   "status": "待老闆定日子",
+   "stage": "shoot"
+  },
+  {
+   "id": "E003",
+   "teacher": "Renee",
+   "subject": "英文",
+   "title": "《英文作文百搭框架》Giveaway",
+   "next": "確認教材最終版同自動回覆",
+   "kind": "Giveaway",
+   "priority": "中",
+   "due": null,
+   "status": "待老闆定日子",
+   "stage": "todo"
+  },
+  {
+   "id": "E004",
+   "teacher": "Renee",
+   "subject": "英文",
+   "title": "News in English Carousel 模板",
+   "next": "整理 Master Template",
+   "kind": "設計",
+   "priority": "中",
+   "due": null,
+   "status": "待老闆定日子",
+   "stage": "todo"
+  }
+ ],
+ "replies": [
+  [
+   "已上載 E012",
+   "原片放咗 Drive"
+  ],
+  [
+   "確認 E012",
+   "剪好嘅片 OK"
+  ],
+  [
+   "改 E012：…",
+   "要改邊度"
+  ],
+  [
+   "已出 E012 連結",
+   "已出 Post"
+  ],
+  [
+   "改期 E012 11/20",
+   "想改日子（要老闆批）"
+  ]
+ ],
+ "content": {
+  "rules": [
+   "晚上 8:00 出 Post；過咗 9:00 就改聽日出。",
+   "每個帳號一日最多 1 條。",
+   "星期五至日流量最好，重要片（宣傳、Giveaway）放呢幾日。",
+   "頭 5 秒要有 Hook。",
+   "影片放 Google Drive：01_老師原片 → 02_剪好待確認 → 03_待出 → 04_已出，唔用 WhatsApp 傳。"
+  ],
+  "reminders": [
+   [
+    "前 7 日",
+    "要拍咩（題目、稿）"
+   ],
+   [
+    "前 5 日",
+    "原片放 Drive"
+   ],
+   [
+    "前 3 日",
+    "剪好交老師睇"
+   ],
+   [
+    "前 2 日",
+    "老師確認"
+   ],
+   [
+    "前 1 晚 21:00",
+    "合併摘要：聽日出邊條"
+   ],
+   [
+    "當日 19:00",
+    "提醒 8 點出"
+   ],
+   [
+    "當日 21:00",
+    "未覆「已出」就通知老闆"
+   ],
+   [
+    "星期日 21:00",
+    "下星期總覽"
+   ]
+  ],
+  "series": [
+   {
+    "day": "星期一",
+    "who": "Renee",
+    "what": "港乜都 Duck（輕鬆）"
+   },
+   {
+    "day": "星期二、五",
+    "who": "Renee",
+    "what": "講D唔港DSE＋課程 CTA"
+   }
+  ]
+ }
+}
